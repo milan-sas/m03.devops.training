@@ -59,7 +59,7 @@ blocks:
             - pip install wapiti3
             - gunicorn -b 0.0.0.0:4000 app:app --daemon
             - wapiti -u http://localhost:4000 -f html || true
-            - artifact push workflow /root/.wapiti/generated_report
+            - artifact push workflow /home/semaphore/.wapiti/generated_report
   - name: Dependency Scanning
     dependencies:
       - SBOM
