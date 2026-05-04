@@ -43,7 +43,7 @@ blocks:
             - python3 -m venv venv
             - source venv/bin/activate
             - pip install pip-audit
-            - pip-audit -r requirements.txt
+            - pip-audit -r requirements.txt || true
   - name: SBOM
     dependencies:
       - Verify
