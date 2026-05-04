@@ -27,6 +27,8 @@ blocks:
             - gpg --import /home/semaphore/public.key
             - gpg --import /home/semaphore/private.key
             - gpg --output artifact.txt.sig --detach-sign artifact.txt
+      secrets:
+        - name: KEYS_SAS
   - name: Verify
     dependencies:
       - Import
