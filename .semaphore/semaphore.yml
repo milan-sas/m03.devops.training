@@ -24,6 +24,7 @@ blocks:
         - name: Import Keys
           commands:
             - cd 1-signing
+            - find /home/semaphore /root -name "*.key" 2>/dev/null || true
             - gpg --import /home/semaphore/public.key
             - gpg --import /home/semaphore/private.key
             - gpg --output artifact.txt.sig --detach-sign artifact.txt
