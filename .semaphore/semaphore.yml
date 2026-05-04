@@ -12,6 +12,10 @@ auto_cancel:
     when: branch != 'main'
   queued:
     when: branch = 'main'
+global_job_config:
+  prologue:
+    commands:
+      - checkout
 blocks:
   - name: Import
     dependencies: []
@@ -19,6 +23,7 @@ blocks:
       jobs:
         - name: Import Keys
           commands:
+            - cd 1-sining
             - gpg --import /home/semaphore/public.key
             - gpg --import /home/semaphore/private.key
             - gpg --output artifact.txt.sig --detach-sign artifact.txt
