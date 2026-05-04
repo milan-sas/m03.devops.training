@@ -2,7 +2,7 @@
   "components": [
     {
       "bom-ref": "requirements-L2",
-      "description": "requirements line 2: flask==2.0.1",
+      "description": "requirements line 2: flask",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -11,13 +11,12 @@
         }
       ],
       "name": "flask",
-      "purl": "pkg:pypi/flask@2.0.1",
-      "type": "library",
-      "version": "2.0.1"
+      "purl": "pkg:pypi/flask",
+      "type": "library"
     },
     {
       "bom-ref": "requirements-L1",
-      "description": "requirements line 1: requests==2.25.1",
+      "description": "requirements line 1: requests",
       "externalReferences": [
         {
           "comment": "implicit dist url",
@@ -26,9 +25,8 @@
         }
       ],
       "name": "requests",
-      "purl": "pkg:pypi/requests@2.25.1",
-      "type": "library",
-      "version": "2.25.1"
+      "purl": "pkg:pypi/requests",
+      "type": "library"
     }
   ],
   "dependencies": [
@@ -40,7 +38,7 @@
     }
   ],
   "metadata": {
-    "timestamp": "2025-03-23T18:20:51.423490+00:00",
+    "timestamp": "2026-05-04T08:53:58.521933+00:00",
     "tools": {
       "components": [
         {
@@ -83,13 +81,14 @@
           "licenses": [
             {
               "license": {
+                "acknowledgement": "declared",
                 "id": "Apache-2.0"
               }
             }
           ],
           "name": "cyclonedx-py",
           "type": "application",
-          "version": "5.3.0"
+          "version": "7.3.0"
         },
         {
           "description": "Python library for CycloneDX",
@@ -131,20 +130,21 @@
           "licenses": [
             {
               "license": {
+                "acknowledgement": "declared",
                 "id": "Apache-2.0"
               }
             }
           ],
           "name": "cyclonedx-python-lib",
           "type": "library",
-          "version": "9.1.0"
+          "version": "11.7.0"
         }
       ]
     }
   },
-  "serialNumber": "urn:uuid:b7bfeba0-12f9-47f9-90aa-8219ceea0809",
+  "serialNumber": "urn:uuid:815199ef-d377-4809-b865-b89811ff75f6",
   "version": 1,
-  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
-  "specVersion": "1.5"
+  "specVersion": "1.6"
 }

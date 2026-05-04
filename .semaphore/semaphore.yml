@@ -31,6 +31,18 @@ blocks:
             - artifact push workflow artifact.txt.sig
       secrets:
         - name: KEYS_NEW
+  - name: SBOM
+    dependencies: []
+    task:
+      jobs:
+        - name: Generate SBOM
+          commands:
+            - cd 2-sbom
+            - python -m venv venv
+            - source venv/bin/activate
+            - pip install cyclonedx-bom
+            - cyclonedx-py requirements -o bom.json
+            - artifact push workflow bom.json
   - name: Verify
     dependencies:
       - Import
