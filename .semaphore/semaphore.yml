@@ -31,6 +31,19 @@ blocks:
             - artifact push workflow artifact.txt.sig
       secrets:
         - name: KEYS_NEW
+  - name: Dependency Scanning
+    dependencies:
+      - SBOM
+    task:
+      jobs:
+        - name: pip-audit
+          commands:
+            - cd 3-dependency-scanning
+            - sudo apt-get update && sudo apt-get install -y python3.12-venv
+            - python3 -m venv venv
+            - source venv/bin/activate
+            - pip install pip-audit
+            - pip-audit -r requirements.txt
   - name: SBOM
     dependencies:
       - Verify
