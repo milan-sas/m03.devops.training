@@ -32,7 +32,8 @@ blocks:
       secrets:
         - name: KEYS_NEW
   - name: SBOM
-    dependencies: []
+    dependencies:
+      - Verify
     task:
       jobs:
         - name: Generate SBOM
