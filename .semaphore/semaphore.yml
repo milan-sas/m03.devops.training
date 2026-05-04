@@ -39,7 +39,8 @@ blocks:
         - name: Generate SBOM
           commands:
             - cd 2-sbom
-            - python -m venv venv
+            - sudo apt-get install -y python3.12-venv
+            - python3 -m venv venv
             - source venv/bin/activate
             - pip install cyclonedx-bom
             - cyclonedx-py requirements -o bom.json
