@@ -19,6 +19,7 @@ blocks:
       jobs:
         - name: Import Keys
           commands:
+            - cd 1-signing
             - gpg --import /home/semaphore/public.key
             - gpg --import /home/semaphore/private.key
             - gpg --output artifact.txt.sig --detach-sign artifact.txt
