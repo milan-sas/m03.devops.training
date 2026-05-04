@@ -31,6 +31,19 @@ blocks:
             - artifact push workflow artifact.txt.sig
       secrets:
         - name: KEYS_NEW
+  - name: SAST
+    dependencies:
+      - Dependency Scanning
+    task:
+      jobs:
+        - name: Bandit
+          commands:
+            - cd 4-sast
+            - sudo apt-get update && sudo apt-get install -y python3.12-venv
+            - python3 -m venv venv
+            - source venv/bin/activate
+            - pip install bandit
+            - bandit -r vulnerable_script.py || true
   - name: Dependency Scanning
     dependencies:
       - SBOM
